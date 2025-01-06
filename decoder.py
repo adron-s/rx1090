@@ -5,7 +5,7 @@ This module contains all the logic for demodulating, searching (by preamble)
 and decoding ADS-B messages.
 
 This file can work as a standalone program for analyzing already collected data,
-or as a module - as part of the rx090 project.
+or as a module - as part of the rx1090 project.
 
 Use the following command to collect data in SB format:
 	hackrf_transfer -r hackrb-dump-00.sb -f 1090e6 -s 2e6 -p 0 -a 0 -l 32 -g 48
