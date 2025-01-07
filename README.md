@@ -22,12 +22,12 @@ To use this program, follow these steps:
 3. Run the program to start decoding ADS-B messages.
 
 ## Usage
-# Run the program normally to decode ADS-B messages
+### Run the program normally to decode ADS-B messages
 ```sh
 python3 rx1090.py
 ```
 
-# Run the program with verbose output to print info about each received message
+### Run the program with verbose output to print info about each received message
 ```sh
 python3 rx1090.py -v
 ```
