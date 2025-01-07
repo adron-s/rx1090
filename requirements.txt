@@ -3,4 +3,4 @@ numba
 numpy
 pyModeS
 python-dotenv
-scipy
+
