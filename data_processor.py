@@ -13,6 +13,7 @@ separate process.
 import time
 import signal
 import decoder
+import datetime
 import numpy as np
 from multiprocessing import Process, Queue, Event, Value
 from multiprocessing.sharedctypes import Synchronized
@@ -70,11 +71,14 @@ class DataProcessor:
 						magnitudes, decoder.icao_cache
 					)
 				end_t = time.perf_counter()
+				current_time = datetime.datetime.now()
 
 				print(f"\nFound {preamble_count} matches for ADS-B preamble")
 				print(f"Decoded {ok_msgs_count} ADS-B messages")
 				print(f"Demodulation time: {end_t - start_t:.2f} sec,",
-					f"Data read cycle: {data_process_delta:.2f} sec")
+					f"Data read cycle: {data_process_delta:.2f} sec,",
+					"Current time:", current_time.strftime("%H:%M:%S")
+				)
 
 				buffer_overflow =  self.get_buffer_overflow()
 				if buffer_overflow > 0:
