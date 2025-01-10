@@ -346,7 +346,7 @@ def process_adsb_msg(
 		altitude = pms.adsb.altitude(msg)
 		if altitude:
 			altitude *= FEET_TO_M_MULT # in meters
-	except RuntimeError:
+	except Exception:
 		altitude = None
 
 	try:
@@ -354,7 +354,7 @@ def process_adsb_msg(
 		if velocity:
 			# Feets per min to km per hour.
 			velocity = velocity[0] * KNOTS_TO_KMPH_MULT
-	except RuntimeError:
+	except Exception:
 		velocity = None
 
 	try:
@@ -366,7 +366,7 @@ def process_adsb_msg(
 			position_kind = "(R)"
 
 		distance = geodesic((reference_lat, reference_lon), position).kilometers
-	except (RuntimeError, ValueError):
+	except Exception:
 		position = None
 		distance = None
 
